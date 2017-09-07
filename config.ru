@@ -4,6 +4,7 @@ require 'dotenv/load'
 
 class ReDirector < Roda
   plugin :unescape_path
+  plugin :middleware
 
   base       = ENV['CONTENIDO_URL']
   categories = %w(educación inmigración salud finanzas trabajo impuestos noticias farmasep)
