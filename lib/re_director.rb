@@ -46,6 +46,11 @@ class ReDirector < Roda
 
     # The rest of the requests
     if opts[:mode] == :independent
+      # Shortener links
+      r.on 'link', String do |link_id|
+        r.redirect "#{opts[:sep]}link/#{link_id}"
+      end
+
       r.is String do
         r.redirect opts[:sep]
       end
